@@ -4,18 +4,25 @@ import Card from "./components/Card";
 import Data from "./components/Data";
 import Form from "./components/Form";
 import Home from "./components/Home";
+import { InfinitySpin } from "react-loader-spinner";
 
 const App = () => {
   const [cityDetails, setCityDetails] = useState(null);
 
   const [isClicked, setIsClicked] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div>
       {!isClicked && <Card>
-        <Home setIsClicked={setIsClicked} isClicked={isClicked} setCityDetails={setCityDetails} />
+        <Home setIsClicked={setIsClicked} isClicked={isClicked} setCityDetails={setCityDetails} setIsLoading={setIsLoading} isLoading={isLoading} />
       </Card>}
-      {isClicked && <Card>
+      {isClicked && isLoading && <InfinitySpin
+        width='200'
+        color="#4fa94d"
+      />}
+      {isClicked && !isLoading && <Card>
         <Form setCityDetails={setCityDetails} />
         <Data cityDetails={cityDetails} />
       </Card>}
