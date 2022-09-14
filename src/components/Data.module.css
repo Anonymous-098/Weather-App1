@@ -1,0 +1,93 @@
+.dataContainer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    row-gap: 10px;
+}
+
+.dateTime{
+    font-weight: 200;
+    text-align: center;
+}
+
+.city{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.weather{
+    text-align: center;
+    text-transform: capitalize;
+    color: #61d9fb;
+    font-weight: 300;
+}
+
+.weatherData{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animation{
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+.tempValue{
+    font-size: 2.5rem;
+}
+
+.celsius{
+    width: 3rem;
+    height: 3rem;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    /* background-color: coral; */
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 0.75rem;
+}
+
+.desc span{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.desc span img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.line{
+    margin: 0 0.5rem;
+}
+
+.high_low{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #61d9fb; */
+}
+
+.highIcon{
+    margin: 0 0.5rem;
+}
+
+.lowIcon{
+    margin: 0 0.5rem;
+}
+
+.wordWeight{
+    font-weight: 300;
+    margin-right: 0.25rem
+}
+
+.degree{
+    padding-bottom: 0.5rem;
+}
