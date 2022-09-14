@@ -33,12 +33,6 @@ const Data = (props) => {
     var high = (data.main.temp_max - 273.15).toFixed(0);
     var low = (data.main.temp_min - 273.15).toFixed(0);
     var temp;
-    
-    // console.log(data.list);
-    // for (var i=0;i<5;i++)
-    // {
-    //     console.log(data.list[i]);
-    // }
 
     if (weather === "clear sky") {
         temp = clear_sky;
@@ -70,7 +64,6 @@ const Data = (props) => {
     else if (weather === "haze") {
         temp = haze;
     }
-
 
     return (
         <div className={classes.dataContainer}>
