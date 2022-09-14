@@ -11,17 +11,18 @@
 .input{
     outline: none;
     width: 70%;
-    height: 70%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    font-size: 1.25rem;
+    height: 65%;
+    font-family: inherit;
+    font-size: 0.95rem;
+    /* text-align: center; */
     box-shadow: 5px 3px 3px 1px #202a4bbd;
     border: 2px solid white;
     transition: all 200ms ease-in-out;
+    padding-left: 0.75rem;
 }
 
 .input:focus{
-    box-shadow: 0 0 0 4px rgb(75, 75, 216);
+    box-shadow: 0 0 0 4px rgb(51, 51, 183);
 }
 
 .icon{

@@ -3,48 +3,26 @@ import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Data from "./components/Data";
 import Form from "./components/Form";
+import Home from "./components/Home";
+import { InfinitySpin } from "react-loader-spinner";
 
 const App = () => {
-
-  const [cityName, setCityName] = useState("Hisar");
   const [cityDetails, setCityDetails] = useState(null);
-
-  // async function getWeather() {
-  //   const response = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Hisar&APPID=2a95407562161c907213d3c692c06e9a");
-  //   setCityDetails(response.data);
-  // }
-  // useEffect(() => {
-  //   getWeather();
-  //   console.log(cityDetails);
-  // }, [cityName])
-
-  // getWeather();
-
-  // console.log(cityDetails);
-
-
-  useEffect(()=>{
-    async function getWeather(){
-      const response = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Hisar&APPID=2a95407562161c907213d3c692c06e9a");
-      setCityDetails(response.data);
-    }
-    getWeather();
-    
-    console.log(cityDetails);
-  },[cityName]);
-
+  const [isClicked, setIsClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div>
-      <Card>
-        <Form setCityName={setCityName} />
-        <Data />
-      </Card>
+      {!isClicked && <Card>
+        <Home setIsClicked={setIsClicked} isClicked={isClicked} setCityDetails={setCityDetails} />
+      </Card>}
+      {isClicked && <Card>
+        <Form setCityDetails={setCityDetails} setIsLoading={setIsLoading} />
+        {isLoading && <InfinitySpin />}
+        {!isLoading && <Data cityDetails={cityDetails} />}
+      </Card>}
     </div>
   );
 }
 
 export default App;
-
-
-// https://api.openweathermap.org/data/2.5/weather?q=Berlin&APPID=2a95407562161c907213d3c692c06e9a

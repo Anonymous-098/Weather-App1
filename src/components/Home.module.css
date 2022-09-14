@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.heading{
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.btn{
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 1rem;
+    color: white;
+    font-size: 2rem;
+    margin:3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+}
